@@ -1,0 +1,15 @@
+
+ @for (item of companyList; track item.company_number) {
+<mat-card class="card__item">
+    <mat-card-header>
+        <mat-card-title>
+            <a class="nav-link" [routerLink]="['/company/' + item.company_number]" [state]="{company: item}">{{item.title}}</a>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <span [innerHTML]="item.description | highlight: item.company_number"></span>
+            <br />
+            {{item.address_snippet}}
+        </mat-card-subtitle>
+    </mat-card-header>
+</mat-card>
+}

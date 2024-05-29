@@ -1,0 +1,15 @@
+<form class="search__form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>Company Name or Number</mat-label>
+        <input class="search__input" matInput formControlName="searchInput" placeholder="Company Name or Number">
+        <mat-error *ngIf="searchForm.get('searchInput')?.hasError('required')">
+            This field is required
+        </mat-error>
+        <mat-error *ngIf="searchForm.get('searchInput')?.hasError('pattern')">
+            Only numbers or characters are allowed
+        </mat-error>
+    </mat-form-field>
+
+    <button class="seach__button" mat-raised-button color="primary" type="submit"
+        [disabled]="searchForm.invalid">Search</button>
+</form>

@@ -1,0 +1,16 @@
+
+@if(companyDetail$ | async; as detail){
+<p class="card__subheading">Registered office address</p>
+<p class="card__subcontent">{{detail?.address_snippet}}</p>
+
+<p class="card__subheading">Company status</p>
+<p class="card__subcontent">{{detail?.company_status}}</p>
+
+<p class="card__subheading">Company type</p>
+<p class="card__subcontent">{{detail?.company_type}}</p>
+
+<p class="card__subheading">Incorporated on</p>
+<p class="card__subcontent">{{detail?.date_of_creation}}</p>
+
+<a class="nav__link" [routerLink]="['/company',detail?.company_number,'officers']">List Officers</a>
+}

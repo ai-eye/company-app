@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+.nx/cache
+.nx/workspace-data
+
+#contains API_KEY for the app
+secrets.ts

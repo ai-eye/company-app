@@ -1,0 +1,20 @@
+@if (loading$ | async) {
+    <ca-spinner />
+} @else {
+    @if(officerList$ | async; as officerList) {
+        @if(officerList?.items?.length === 0) {
+            <p>No results found</p>
+        } @else {
+            @for (item of officerList.items; track item.name) {
+                <p class="card__subheading">{{ item.name }}</p>
+                <p class="card__subcontent">{{ item.officer_role }}</p>
+            }
+        }
+    }
+}
+
+
+@if (error$ | async; as error) {
+    <ca-error [error]="error"/>
+}
+

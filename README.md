@@ -1,3 +1,13 @@
+# Services depend on git ommitted file 
+`app/secrets.ts`
+`export const API_KEY = 'xxxxxxxxxxxxx';`
+
+# JSON server is configured if no backend available
+npm run json-server
+Change the `environment.ts` useMockService: true
+Will now use endpoint http://localhost:3000/Companies 
+
+
 # CompanyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.

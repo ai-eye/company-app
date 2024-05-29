@@ -1,0 +1,18 @@
+<div class="container">
+  @if (companyDetailError$ | async; as error) {
+        <ca-error [error]="error"/>
+    } @else {
+        @if (companyDetail$ | async; as companyDetail) {
+            <mat-card class="card__item">
+                <mat-card-header>
+                    <mat-card-title>{{companyDetail?.title}}</mat-card-title>
+                    <mat-card-subtitle class="card__subtitle">Company Number
+                        <b>{{companyDetail?.company_number}}</b></mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="card__content card__content--top-space">
+                    <router-outlet></router-outlet>
+                </mat-card-content>
+            </mat-card>
+        }
+    }
+</div>
